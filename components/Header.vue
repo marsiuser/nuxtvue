@@ -26,7 +26,7 @@
             </div>
            <div class="header-phone">
                <a class="header-phone__number" href="tel:+88005005005">8 800 500 500 5</a>
-               <a class="header-phone__enter"  href="#">вход</a>
+               <!-- <a class="header-phone__enter"  href="#">вход</a> -->
            </div>
            <div class="header-phone__mob">
                <a href="#"><img class="mob-tel" src="../assets/img/mobile-tel.svg" alt="phone"></a>
@@ -297,7 +297,6 @@ export default {
                 padding: 12px 25px;
                 font-size: 14px;
                 font-family: "Aver-Regular", sans-serif;
-                margin-right: 20px;
                 @media screen and (max-width: 1260px){
                     display: none;
                 }
