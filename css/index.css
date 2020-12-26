@@ -1,0 +1,438 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+@import url(e:\2020\WORK\FREELANCE\nuxt\nuxtjs\assets\styles\reset.css);
+@font-face {
+  font-family: "Aver-Bold";
+  src: url("../fonts/avenirnextcyr-bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Aver-Bold-Italic";
+  src: url("../fonts/avenirnextcyr-bolditalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Aver-Demi";
+  src: url("../fonts/avenirnextcyr-demi.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Aver-Demi-Italic";
+  src: url("../fonts/avenirnextcyr-demiitalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Aver-Heavy";
+  src: url("../fonts/avenirnextcyr-heavy.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Aver-Heavy-Italic";
+  src: url("../fonts/avenirnextcyr-heavyitalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Aver-Italic";
+  src: url("../fonts/avenirnextcyr-italic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Aver-Light";
+  src: url("../fonts/avenirnextcyr-light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Avenir-heavy";
+  src: url("../fonts/avenirnextcyr-medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Aver-Regular";
+  src: url("../fonts/avenirnextcyr-regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Aver-Thin";
+  src: url("../fonts/avenirnextcyr-thin.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Aver-UltraLight";
+  src: url("../fonts/avenirnextcyr-ultralight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Geometria";
+  src: url("../fonts/Geometria.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Geometria-Bold";
+  src: url("../fonts/Geometria-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Geometria-ExtraBold";
+  src: url("../fonts/Geometria-ExtraBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Geometria-ExtraBold";
+  src: url("../fonts/Geometria-ExtraBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Geometria-ExtraLight";
+  src: url("../fonts/Geometria-ExtraLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Geometria-Heavy";
+  src: url("../fonts/Geometria-Heavy.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Geometria-Light";
+  src: url("../fonts/Geometria-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Geometria-Medium";
+  src: url("../fonts/Geometria-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Geometria-Thin";
+  src: url("../fonts/Geometria-Thin.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Geometria-Thin";
+  src: url("../fonts/Geometria-Thin.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.jc-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.jc-sb {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.al-item-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.al-item-fl-st {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.f-direc-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.f-wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+body {
+  font-family: "Geometria";
+}
+
+._container {
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1600px) {
+  ._container {
+    max-width: 85%;
+  }
+}
+
+@media (max-width: 576px) {
+  .full-map {
+    padding-bottom: 72px;
+  }
+}
+
+@media (max-width: 400px) {
+  .full-map {
+    padding-bottom: 72px;
+    padding-top: 50px;
+  }
+}
+
+.full-map .title-map {
+  max-width: 930px;
+  font-family: "Aver-Demi";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 72px;
+  line-height: 110%;
+  letter-spacing: -0.03em;
+  color: #0b315e;
+  padding: 215px 0 104px 0;
+}
+
+@media screen and (max-width: 1600px) {
+  .full-map .title-map {
+    font-size: 60px;
+    padding: 150px 0px 100px;
+  }
+}
+
+@media (max-width: 992px) {
+  .full-map .title-map {
+    font-size: 48px;
+    padding: 120px 0 72px;
+  }
+}
+
+@media (max-width: 576px) {
+  .full-map .title-map {
+    display: none;
+  }
+}
+
+.full-map .title-map span {
+  color: #6544FB;
+}
+
+.full-map .subtitle-map-media {
+  display: none;
+  font-family: "Geometria-Bold";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 150%;
+  text-transform: uppercase;
+  text-align: left;
+  /* Темный */
+  color: #0B315E;
+}
+
+@media (max-width: 576px) {
+  .full-map .subtitle-map-media {
+    display: block;
+    padding: 15px 0 13px 0;
+  }
+}
+
+.full-map .title-map-media {
+  font-family: "Aver-Regular";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 120%;
+  text-align: left;
+  display: none;
+  /* or 43px */
+  letter-spacing: -0.03em;
+  /* Темный */
+  color: #0B315E;
+}
+
+@media (max-width: 576px) {
+  .full-map .title-map-media {
+    display: block;
+    padding-bottom: 32px;
+  }
+}
+
+.map-wrapper {
+  position: relative;
+}
+
+@media (max-width: 992px) {
+  .map-wrapper #my-map {
+    height: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .map-wrapper #my-map {
+    height: 500px;
+  }
+}
+
+@media (max-width: 576px) {
+  .map-wrapper #my-map {
+    height: 315px;
+    width: 85%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+  }
+}
+
+.map-wrapper .left-top {
+  top: 130px;
+  left: 60px;
+}
+
+@media (max-width: 992px) {
+  .map-wrapper .left-top {
+    left: 30px;
+  }
+}
+
+.map-wrapper .left {
+  top: 50%;
+  left: 60px;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+@media (max-width: 992px) {
+  .map-wrapper .left {
+    left: 30px;
+  }
+}
+
+.map-wrapper .left-down {
+  bottom: 130px;
+  left: 60px;
+}
+
+@media (max-width: 992px) {
+  .map-wrapper .left-down {
+    left: 30px;
+  }
+}
+
+.map-wrapper .right {
+  right: 60px;
+  top: 130px;
+}
+
+@media (max-width: 992px) {
+  .map-wrapper .right {
+    right: 30px;
+  }
+}
+
+.map-wrapper .right-top {
+  right: 60px;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+@media (max-width: 992px) {
+  .map-wrapper .right-top {
+    right: 30px;
+  }
+}
+
+.map-wrapper .right-down {
+  bottom: 130px;
+  right: 60px;
+}
+
+@media (max-width: 992px) {
+  .map-wrapper .right-down {
+    right: 30px;
+  }
+}
+
+.map-wrapper .map-pointer {
+  position: absolute;
+  background-color: #0B315E;
+  padding: 4.5px 12px;
+  border: 1px solid #0B315E;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+  .map-wrapper .map-pointer {
+    display: none;
+  }
+}
+
+.map-wrapper .map-pointer .info {
+  padding-left: 10px;
+}
+
+.map-wrapper .map-pointer .info .title {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 110%;
+  color: #FFFFFF;
+  font-family: 'Montserrat';
+}
+
+.map-wrapper .map-pointer .info .description {
+  font-family: "Geometria";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 110%;
+  padding-top: 6px;
+  color: #FFFFFF;
+}
+/*# sourceMappingURL=index.css.map */

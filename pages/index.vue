@@ -59,6 +59,7 @@ export default {
     //   //   });
     //   // });
     // })
+   
   },
   components: { Coworking, Infrastructure, Footer, }, }
 </script>

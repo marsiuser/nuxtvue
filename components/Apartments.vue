@@ -96,6 +96,9 @@ sup{
             &__item {
                 max-width: 207px;
                 padding: 20px;
+                @media screen and (max-width: 960px){
+                    width: 176px;
+                }
                 @media screen and (max-width: 560px){
                     padding: 15px;
                     max-width: 145px;

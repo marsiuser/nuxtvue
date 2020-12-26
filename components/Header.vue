@@ -14,7 +14,7 @@
            <div class="header-menu header-menu__desktop">
                <nav>
                    <ul>
-                       <li><a class=" header-menu__current scrollto" href="#about">о квартале</a></li>
+                       <li><a class="scrollto" href="#about">о квартале</a></li>
                        <li><a href="#apartments" class="scrollto">Кварталы</a></li>
                        <li><a href="#location" class="scrollto">локация</a></li>
                        <li><a href="#advantages" class="scrollto">Преимущества</a></li>
@@ -50,7 +50,7 @@
                         <li><a class="menu__item" href="#">Локация</a></li>
                         <li><a class="menu__item" href="#">Преимущества</a></li>
                         <li><a class="menu__item" href="#">Инфраструктура</a></li>
-                        <li><a class="menu__item" href="#">Контакты</a></li>
+                        <li><a class="menu__item menu__item-next" href="#">Контакты</a></li>
                         <li class="menu__box-last"><a class="menu__box-tel" href="tel:+88005005005">8 800 500 500 5</a>
                             <div class="menu__box-social">
                                 <a href="#">
@@ -116,10 +116,10 @@ export default {
         );
       });
 
-      $('.header-menu > nav > ul > li > a').on('click', function (){
-        $('.scrollto').removeClass('header-menu__current');
-        $(this).addClass('header-menu__current');
-      })
+    //   $('.header-menu > nav > ul > li > a').on('click', function (){
+    //     $('.scrollto').removeClass('header-menu__current');
+    //     $(this).addClass('header-menu__current');
+    //   })
       $(window).scroll(function(){
             if ($(this).scrollTop() > 120) {
                 $('.header').addClass('fixed').slideDown();
@@ -135,6 +135,51 @@ export default {
                 $next.length ? $next.addClass('is-current') : $('.header-logo__image:first').addClass('is-current');
             }, 1000);
          });
+         // Cache selectors
+var lastId,
+    topMenu = $(".header-menu__desktop ul"),
+    topMenuHeight = topMenu.outerHeight()+15,
+    // All list items
+    menuItems = topMenu.find("a"),
+    // Anchors corresponding to menu items
+    scrollItems = menuItems.map(function(){
+      var item = $($(this).attr("href"));
+      if (item.length) { return item; }
+    });
+
+// Bind click handler to menu items
+// so we can get a fancy scroll animation
+menuItems.click(function(e){
+  var href = $(this).attr("href"),
+      offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
+  $('html, body').stop().animate({ 
+      scrollTop: offsetTop
+  }, 300);
+  e.preventDefault();
+});
+
+// Bind to scroll
+$(window).scroll(function(){
+   // Get container scroll position
+   var fromTop = $(this).scrollTop()+topMenuHeight;
+   
+   // Get id of current scroll item
+   var cur = scrollItems.map(function(){
+     if ($(this).offset().top < fromTop)
+       return this;
+   });
+   // Get the id of the current element
+   cur = cur[cur.length-1];
+   var id = cur && cur.length ? cur[0].id : "";
+   
+   if (lastId !== id) {
+       lastId = id;
+       // Set/remove active class
+       menuItems
+         .parent().removeClass("header-menu__current")
+         .end().filter("[href='#"+id+"']").parent().addClass("header-menu__current");
+   }                   
+});
   }
 }
 
@@ -171,7 +216,7 @@ export default {
     .header.fixed{
         width: 100%;
         position: fixed;
-        padding: 12px 0px 12px;
+        padding: 14px 0px 14px;
         box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.12);
         transition: padding .5s ease-in;
     }
@@ -189,7 +234,7 @@ export default {
             justify-content: space-between;
             align-items: center;
             @media screen and (max-width: 1260px){
-                align-items: flex-start;
+              
             }
         }
         .header-wrap{
@@ -243,7 +288,12 @@ export default {
             width: 100%;
             &__current{
                 color: #6544FB !important;
-                border-bottom: 3px solid #6544FB;
+                padding-bottom: 5px;
+                a{
+                     color: #6544FB !important;
+                     padding-bottom: 3px;
+                     border-bottom: 3px solid #6544FB;
+                }
             }
              a{
                 font-family: "Aver-Bold";
@@ -253,7 +303,7 @@ export default {
                 color: #0B315E;
                 margin: 40px 0px;
                 outline: none;
-                padding-bottom: 10px;
+                // padding-bottom: 10px;
                 font-size: 14px;
                 @media screen and (max-width: 1260px){
                     font-size: 12px;
@@ -269,7 +319,7 @@ export default {
         .header-phone__mob{
             display: none;
             @media screen and (max-width: 960px){
-                display: block;
+                display: inline-flex;
             }
             .mob-tel{
                 margin-right: 10px;
@@ -324,7 +374,7 @@ export default {
         display: flex;
         align-items: center;
         position: absolute;
-        top: 12px;
+        top: 18px;
         right: 20px;
         width: 26px;
         height: 26px;
@@ -371,9 +421,12 @@ export default {
         z-index: 9999;
         transition: all 0.5s;
     }
+    .menu__item-next{
+        padding-bottom: 80px !important;
+    }
     .menu__item {
         display: block;
-        padding: 15px 24px;
+        padding: 18px 24px;
         color: #333;
         font-size: 16px;
         line-height: 120%;
@@ -387,7 +440,7 @@ export default {
         transition: all 0.3s;
     }
     #menu__toggle:checked ~ .menu__btn > span {
-    transform: rotate(45deg);
+    transform: rotate(45deg) ;
     }
     #menu__toggle:checked ~ .menu__btn > span::before {
     top: 0;
@@ -404,6 +457,7 @@ export default {
     }
    #menu__toggle:checked ~  .menu__btn {
         position: fixed;
+        top: 12px;
     }
     .menu__box-last{
         display: flex;
@@ -421,7 +475,7 @@ export default {
             background: #6544FB;
             border-radius: 60px;
             display: inline-block;
-            padding: 7px 10px;
+            padding: 7px 20px;
         }
     }
     .menu__item-current{
@@ -540,5 +594,7 @@ export default {
         z-index:5;
         opacity: 1;
     }
-    
+    .header.fixed .menu__btn{
+        top: 12px;
+    }
 </style>
